@@ -29,7 +29,10 @@ extension DismissAnimator: TransitionAnimatorType {
             else { return }
         
         let containerView = transitionContext.containerView
-        containerView.insertSubview(toVC.view, belowSubview: fromVC.view)
+        if fromVC.modalPresentationStyle == .fullScreen  {
+            containerView.insertSubview(toVC.view, belowSubview: fromVC.view)
+        }
+        
         
         let finalFrame = self.finalFrame(for: fromVC.view, for: orientation)
         let shadowView = UIView.shadowView
