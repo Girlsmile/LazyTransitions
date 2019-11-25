@@ -33,9 +33,9 @@ extension DismissAnimator: TransitionAnimatorType {
             containerView.insertSubview(toVC.view, belowSubview: fromVC.view)
         }
         
-        
         let finalFrame = self.finalFrame(for: fromVC.view, for: orientation)
         let shadowView = UIView.shadowView
+        shadowView.backgroundColor = UIColor.clear
         
         containerView.insertSubview(shadowView, aboveSubview: toVC.view)
         
